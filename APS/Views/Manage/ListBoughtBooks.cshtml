@@ -13,17 +13,17 @@
     <thead>
         <tr>
             @*<th>
-                    @Html.DisplayNameFor(model => model.Street)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Number)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.CardType)
-                </th>*@
+            @Html.DisplayNameFor(model => model.Street)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Number)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CardType)
+        </th>*@
             @*<th>
-                    @Html.DisplayNameFor(model => model.Buyer.Name)
-                </th>*@
+            @Html.DisplayNameFor(model => model.Buyer.Name)
+        </th>*@
             <th>
                 @*@Html.DisplayNameFor(model => model.Book.Title)*@
                 <strong>Título</strong>
@@ -35,45 +35,51 @@
             <th>
                 Avaliação da Compra
             </th>
-    </thead>
+            <th>
+                Status da entrega
+            </th>
+</thead>
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                @*<td>
-                        @Html.DisplayFor(modelItem => item.PurchaseId)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Street)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Number)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.CardType)
-                    </td>*@
-                @*<td>
-                        @Html.DisplayFor(modelItem => item.Buyer.Name)
-                    </td>*@
-                <td>
-                    @Html.DisplayFor(modelItem => item.Book.Title)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Book.Value)
-                </td>
-                @*<td>
-                        @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-                    </td>*@
-                <td>
-                    <form asp-action="ListBoughtBooks">
-                        <input asp-for="@item.Rating" name="rating" id="input-id" type="text" data-step="1.0" class="rating" data-size="xs" data-show-caption="false">
-                        <input asp-for="@item.Status" type="hidden" name="purchaseId" value="@item.PurchaseId" />
-                        <input type="submit" value="Salvar"/>
-                    </form>
-                </td>
-            </tr>
+        <tr>
+            @*<td>
+            @Html.DisplayFor(modelItem => item.PurchaseId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Street)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Number)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CardType)
+        </td>*@
+            @*<td>
+            @Html.DisplayFor(modelItem => item.Buyer.Name)
+        </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.Book.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Book.Value)
+            </td>
+            @*<td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>*@
+            <td>
+                <form asp-action="ListBoughtBooks">
+                    <input asp-for="@item.Rating" name="rating" id="input-id" type="text" data-step="1.0" class="rating" data-size="xs" data-show-caption="false">
+                    <input asp-for="@item.Status" type="hidden" name="purchaseId" value="@item.PurchaseId" />
+                    <input type="submit" value="Salvar" />
+                </form>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+        </tr>
         }
     </tbody>
 </table>

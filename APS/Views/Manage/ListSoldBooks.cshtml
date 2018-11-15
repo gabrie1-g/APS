@@ -4,16 +4,17 @@
     ViewData["Title"] = "ListSoldBooks";
 }
 
-<h2>ListSoldBooks</h2>
+<h2>Livros Vendidos</h2>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+@*<p>
+    <a asp-action="Create">Cadastrar novo livro à venda</a>
+</p>*@
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Book.Title)
+                <strong>Título</strong>
+                @*@Html.DisplayNameFor(model => model.Book.Title)*@
             </th>
             @*<th>
             @Html.DisplayNameFor(model => model.Author)
@@ -24,13 +25,18 @@
         <th>
             @Html.DisplayNameFor(model => model.Category)
         </th>*@
-            <th>
+            @*<th>
+                <strong>Estoque</strong>
                 @Html.DisplayNameFor(model => model.Book.InitialStock)
+            </th>*@
+            <th>
+                <strong>Preço</strong>
+                @*@Html.DisplayNameFor(model => model.Book.Value)*@
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Book.Value)
+                <strong>Status da entrega</strong>
+                @*@Html.DisplayNameFor(model => model.Book.Value)*@
             </th>
-
             @*<th>
             @Html.DisplayNameFor(model => model.InStock)
         </th>
@@ -58,9 +64,9 @@
             <td>
                 @Html.DisplayFor(model => item.Book.Title)
             </td>
-            <td>
+            @*<td>
                 @Html.DisplayFor(model => item.Book.InitialStock)
-            </td>
+            </td>*@
             <td>
                 @Html.DisplayFor(model => item.Book.Value)
             </td>
