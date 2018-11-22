@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace APS.Models
 {
@@ -9,5 +10,6 @@ namespace APS.Models
         void RatePurchase(string purchaseId, string rating);
         IEnumerable<Purchase> ListSoldBooks(string sellerId);
         void UpdateStatus(string status, string purchaseId);
+        int NewSold(string id);
 	}
 }
