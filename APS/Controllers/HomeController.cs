@@ -9,6 +9,7 @@ using APS.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using APS.Models.HomeViewModels;
+using System.Security.Claims;
 
 namespace APS.Controllers
 {
@@ -77,5 +78,13 @@ namespace APS.Controllers
             _purchaseRepository.SavePurchase(user.Id, purchase.ItemId.ToString(), purchase);
             return RedirectToAction(nameof(Index));
         }
-	}
+
+        [HttpGet]
+        public int CountNewPurchase()
+        {
+            var userId = new Guid(User.FindFirstValue(ClaimTypes.NameIdentifier));
+            return 0;
+        }
+
+    }
 }

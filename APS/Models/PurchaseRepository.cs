@@ -32,6 +32,7 @@ namespace APS.Models
 
         public void SavePurchase(string userId, string bookId, Purchase purchase)
         {
+            purchase.Status = "Compra efetuada";
             purchase.BuyerId = userId;
             purchase.BookId = new Guid(purchase.ItemId);
             var book = _context.Books.Find(purchase.BookId);
@@ -52,6 +53,11 @@ namespace APS.Models
             purchase.Status = status;
             _context.Update(purchase);
             _context.SaveChanges();
+        }
+
+        public int NewSold(string id)
+        {
+            return _context.Purchases.Where(a => a.SellerId == id && a.Status == "Compra efetuada").Count();
         }
     }
 }
