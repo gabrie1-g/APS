@@ -668,6 +668,7 @@ namespace APS.Controllers
         {
             return new Dictionary<string, string>
             {
+                {"Compra efetuada", "Compra efetuada" },
                 {"O seu pedido foi entregue ao transportador", "O seu pedido foi entregue ao transportador" },
                 {"O seu pedido está a caminho do seu endereço", "O seu pedido está a caminho do seu endereço" },
                 {"O seu pedido foi entregue", "O seu pedido foi entregue" }
