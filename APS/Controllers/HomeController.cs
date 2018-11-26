@@ -83,7 +83,8 @@ namespace APS.Controllers
         public int CountNewPurchase()
         {
             var userId = new Guid(User.FindFirstValue(ClaimTypes.NameIdentifier));
-            return 0;
+            int newPurchases = _purchaseRepository.NewSold(userId.ToString());
+            return newPurchases;
         }
 
     }
