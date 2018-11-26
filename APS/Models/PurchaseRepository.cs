@@ -59,5 +59,18 @@ namespace APS.Models
         {
             return _context.Purchases.Where(a => a.SellerId == id && a.Status == "Compra efetuada").Count();
         }
+
+        public decimal getAverageRate(Guid sellerId)
+        {
+            Decimal total = 0;
+            IEnumerable<Purchase> rates = _context.Purchases.Where(b => new Guid(b.SellerId) == sellerId);
+            var teste = rates.First().Rating;
+            foreach(var purchase in rates)
+            {
+                total += purchase.Rating;
+            }
+            if (rates.Count() > 0) return total / rates.Count();
+            else return 0;
+        }
     }
 }

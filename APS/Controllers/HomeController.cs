@@ -27,20 +27,26 @@ namespace APS.Controllers
 		}
 		public IActionResult Index()
 		{
-            var model = _bookRepository.Books.Where(b => b.BookStatus == true);
+            var user = _userManager.GetUserId(User);
+            var model = _bookRepository.Books.Where(b => b.BookStatus == true && b.SellerId != user);
 			return View(model.GroupBy(b => b.Category));
 		}
 
 		public IActionResult DisplayCategory(string SelectedCategory)
 		{
-            decimal itemsInCategory = _bookRepository.Books.GroupBy(b => b.Category == SelectedCategory && b.BookStatus == true).Count();
+            var user = _userManager.GetUserId(User);
+            decimal itemsInCategory = _bookRepository.Books.GroupBy(b => b.Category == SelectedCategory && b.BookStatus == true && b.SellerId != user).Count();
             ViewBag.ItemsPerLine = (int) Math.Ceiling(itemsInCategory / 4);
 			return View("DisplayCategory", _bookRepository.Books.Where(b => b.Category == SelectedCategory && b.BookStatus == true));
 		}
 
         public IActionResult DisplayBook(string SelectedBook)
         {
-            return View("DisplayBook", _bookRepository.Books.Where(p => p.Title == SelectedBook));
+            var teste = SelectedBook;
+            ViewBag.whatever = _purchaseRepository.getAverageRate(new Guid(SelectedBook));
+            //List<Book> books = new List<Book>();
+            //books.Add(SelectedBook);
+            return View("DisplayBook", _bookRepository.Books.Where(b => b.BookId == new Guid(SelectedBook)));
         }
 
 		public IActionResult About()

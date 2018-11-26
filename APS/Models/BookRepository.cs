@@ -85,7 +85,6 @@ namespace APS.Models
             book.First().BookStatus = false;
             _context.SaveChanges();
         }
-
         public IEnumerable<Book> Books => _context.Books;
 	}
 }

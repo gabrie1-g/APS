@@ -11,5 +11,6 @@ namespace APS.Models
         IEnumerable<Purchase> ListSoldBooks(string sellerId);
         void UpdateStatus(string status, string purchaseId);
         int NewSold(string id);
-	}
+        Decimal getAverageRate(Guid sellerId);
+    }
 }

@@ -12,7 +12,7 @@
                             <div class="panel-body">
                                 <div class="row">
                                     <div class="col-sm-7">
-                                        <a asp-action="DisplayBook" asp-route-SelectedBook="@book.Title"><img src="@book.Image1" width="160" height="250"></a>
+                                        <a asp-action="DisplayBook" asp-route-SelectedBook="@book"><img src="@book.Image1" width="160" height="250"></a>
                                     </div>
                                     <div class="col-sm-5">
                                         <strong>Título: </strong> @book.Title
@@ -21,8 +21,6 @@
                                         <br />
                                         <strong>Categoria: </strong> @book.Category
                                         <br />
-                                        @*<strong>Editora: </strong> @book.PublishingCompany
-                                        <br />*@
                                         <strong>Preço: </strong> @book.Value
                                         <br />
                                         <strong>Quantidade: </strong> @book.InStock
