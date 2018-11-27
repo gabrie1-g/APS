@@ -5,25 +5,6 @@
     <UserSecretsId>aspnet-APS-D5AF0523-1EE2-4F64-83A3-0514C0D8D00F</UserSecretsId>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Compile Remove="Migrations\20181018024831_Initial.cs" />
-    <Compile Remove="Migrations\20181018024831_Initial.Designer.cs" />
-    <Compile Remove="Migrations\20181019024952_Initial.cs" />
-    <Compile Remove="Migrations\20181019024952_Initial.Designer.cs" />
-    <Compile Remove="Migrations\20181107175018_Initial.cs" />
-    <Compile Remove="Migrations\20181107175018_Initial.Designer.cs" />
-    <Compile Remove="Migrations\20181107205355_Initial.cs" />
-    <Compile Remove="Migrations\20181107205355_Initial.Designer.cs" />
-    <Compile Remove="Migrations\20181107213012_Initial.cs" />
-    <Compile Remove="Migrations\20181107213012_Initial.Designer.cs" />
-    <Compile Remove="Migrations\20181114005248_Initial.cs" />
-    <Compile Remove="Migrations\20181114005248_Initial.Designer.cs" />
-    <Compile Remove="Migrations\20181121150212_Initial.cs" />
-    <Compile Remove="Migrations\20181121150212_Initial.Designer.cs" />
-    <Compile Remove="Migrations\20181125004316_Initial.cs" />
-    <Compile Remove="Migrations\20181125004316_Initial.Designer.cs" />
-  </ItemGroup>
-
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />

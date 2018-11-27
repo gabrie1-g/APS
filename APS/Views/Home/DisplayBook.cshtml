@@ -51,7 +51,8 @@
                             <br />
                             <strong>Quantidade: </strong>@book.Value
                             <br />
-                            <strong>Avaliação do vendedor: </strong>@ViewBag.whatever
+                            <strong>Avaliação do Vendedor: </strong>@ViewBag.whatever<label class="glyphicon glyphicon-star" style="color:darkorange"></label>
+
                         </div>
                         <div class="col-sm-2">
                             <a asp-action="BuyBook" asp-route-bookId="@book.BookId" class="btn btn-warning text-center" style="position: absolute; top: 215px"><span class="glyphicon glyphicon-usd"></span> Comprar</a>

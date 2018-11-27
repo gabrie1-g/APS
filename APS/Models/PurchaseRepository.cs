@@ -63,13 +63,12 @@ namespace APS.Models
         public decimal getAverageRate(Guid sellerId)
         {
             Decimal total = 0;
-            IEnumerable<Purchase> rates = _context.Purchases.Where(b => new Guid(b.SellerId) == sellerId);
-            var teste = rates.First().Rating;
-            foreach(var purchase in rates)
+            IEnumerable<Purchase> purchases = _context.Purchases.Where(b => new Guid(b.SellerId) == sellerId);
+            foreach(var purchase in purchases)
             {
                 total += purchase.Rating;
             }
-            if (rates.Count() > 0) return total / rates.Count();
+            if (purchases.Count() > 0) return total / purchases.Count();
             else return 0;
         }
     }

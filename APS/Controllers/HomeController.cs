@@ -42,10 +42,8 @@ namespace APS.Controllers
 
         public IActionResult DisplayBook(string SelectedBook)
         {
-            var teste = SelectedBook;
-            ViewBag.whatever = _purchaseRepository.getAverageRate(new Guid(SelectedBook));
-            //List<Book> books = new List<Book>();
-            //books.Add(SelectedBook);
+            var book = _bookRepository.Books.Where(b => b.BookId == new Guid(SelectedBook));
+            ViewBag.whatever = _purchaseRepository.getAverageRate(new Guid(book.First().SellerId));
             return View("DisplayBook", _bookRepository.Books.Where(b => b.BookId == new Guid(SelectedBook)));
         }
 
