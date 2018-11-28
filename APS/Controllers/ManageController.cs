@@ -546,7 +546,7 @@ namespace APS.Controllers
             var user = await _userManager.GetUserAsync(User);
             var model = _bookRepository.Books.Where(b => b.SellerId == user.Id && b.BookStatus == true);
             model.Count();
-            return View("ListBooks2", model);
+            return View("ListBooks", model);
         }
 
         [HttpGet]
